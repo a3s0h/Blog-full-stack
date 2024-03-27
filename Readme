@@ -1,0 +1,21 @@
+# set of server : 
+    -> set up rest APIs
+        > Posts 
+            . fetch all post and by id
+        > Login/Register api
+            . login and sign up apis
+            . authentication of user
+            . user can subsribe as author
+
+# FrontEnd setup
+    -> login and sign up feature 
+    -> page view animations using AOS library (npm i aos)
+    -> routing to different pages 
+    -> pages added : home , abour , contect , sign up and sign in
+    -> responsive design on all pages
+
+# Redux store 
+    -> PostSlice for storing all the posts fetched form the databse 
+    -> authSlice for stroing the current state of user (signed in or not)
+    -> userSlice for storing user information after login (username and email)
+    
