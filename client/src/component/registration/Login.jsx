@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { setUserInfo } from '../../utils/userSlice';
 import axios from 'axios';
 import { setAuth } from '../../utils/authSlice';
-import { setUserId } from '../../utils/userIdSlice';
+import { BASE_URL } from '../../utils/constant';
 
 
 
@@ -28,9 +28,9 @@ const user = useSelector((store) => store?.user)
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/api/user/login", { email: emailIn, password: passwordIn });
+      const response = await axios.post(`${BASE_URL}api/user/login`, { email: emailIn, password: passwordIn });
       const { sessionId, username, email, _id ,authority} = response.data;
-      console.log(response?.data);
+      // console.log(response?.data);
       // Store authentication token in session storage
       sessionStorage.setItem('token', sessionId);
       sessionStorage.setItem('username', username);
@@ -38,7 +38,7 @@ const user = useSelector((store) => store?.user)
       sessionStorage.setItem('type', authority);
       sessionStorage.setItem('userId', _id);
       
-      dispatch(setUserId(_id));
+      // dispatch(setUserId(_id));
       // const username = sessionStorage.getItem('username');
       //           const email = sessionStorage.getItem('email');
       // dispatch(setUserInfo({username , email , authority , _id}));

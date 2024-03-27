@@ -8,7 +8,7 @@ import { resetSpecificPost } from '../../utils/blogSlice'
 const Blog = () => {
     const dispatch = useDispatch();
     const {blogId} = useParams();
-    console.log(blogId);
+    // console.log(blogId);
 
     useEffect(()=>{
         dispatch(resetSpecificPost());
@@ -18,7 +18,7 @@ const Blog = () => {
 
     const data = useSelector((store) => store.blogs?.specificPost);
    
-    console.log(data);
+    // console.log(data);
    
 
     if(!data)return;

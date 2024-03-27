@@ -6,9 +6,9 @@ const { setSessionId } = require("../service/config");
 
 const signUp = async (req,res) => {
     const {username , email , password} = req.body;
-    console.log(username);
-    console.log(email);
-    console.log(password);
+    // console.log(username);
+    // console.log(email);
+    // console.log(password);
     const existingUser = await User.findOne({ email: email });
     if(existingUser) {
         res.status(400).json({message : "User already there!!"});
@@ -20,7 +20,7 @@ const signUp = async (req,res) => {
     }
     catch(error)
     { 
-        console.log("sign up issue");
+        // console.log("sign up issue");
         res.status(500).json({message : error.message});
     }
 }

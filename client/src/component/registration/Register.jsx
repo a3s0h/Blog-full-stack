@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import {  setUserInfo } from "../../utils/userSlice"
 import axios from 'axios'
 import { setAuth } from '../../utils/authSlice'
+import { BASE_URL } from '../../utils/constant'
+
+
 
 const Register = () => {
 
@@ -32,7 +35,7 @@ const Register = () => {
        password : passwordIn
     }
     try{
-      const response = await axios.post("http://localhost:3000/api/user" ,data);
+      const response = await axios.post(`${BASE_URL}api/user` ,data);
       // console.log(response);
       // console.log("registration successful");
       // const {username , email} = data;

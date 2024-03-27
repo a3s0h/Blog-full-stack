@@ -1,4 +1,4 @@
-
+import {BASE_URL} from "../utils/constant"
 import {useDispatch, useSelector} from "react-redux"
 import { addPosts } from "../utils/blogSlice";
 import { useEffect } from "react";
@@ -11,7 +11,7 @@ const useGetAllPosts = () => {
     const dispatch = useDispatch();
 
     const fetchPosts = async () => {
-        const response = await axios.get("http://localhost:3000/");
+        const response = await axios.get(BASE_URL);
         dispatch(addPosts(response?.data));
       }
       useEffect(()=>{

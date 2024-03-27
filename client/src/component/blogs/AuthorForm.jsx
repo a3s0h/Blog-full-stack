@@ -1,6 +1,10 @@
 import axios from 'axios';
 import React, { useRef } from 'react'
 import { useSelector } from 'react-redux';
+import { BASE_URL } from '../../utils/constant';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const AuthorForm = () => {
 
@@ -9,22 +13,28 @@ const AuthorForm = () => {
 
     const userId = useSelector((store) => store.user?.userInfo?.userId);
 
+    const type = useSelector((store) => store.user?.userInfo?.type);
+
+    const navigate = useNavigate();
+
     const handleUser = async () =>{
         const nameIn = name.current.value;
         const bioIn = bio.current.value;
-
         if(!nameIn && !bioIn)return;
 
-        console.log(nameIn);
-        console.log(bioIn);
+        if(type === undefined){navigate("/login");return;}
+
+
+        // console.log(nameIn);
+        // console.log(bioIn);
 
         
         // const userId = sessionStorage.get('userid');
         // console.log(userId);
         const data = {userId : userId ,name :  nameIn , bio :  bioIn} ;
         try{
-            const response = await axios.post("http://localhost:3000/api/user/author",data);
-            console.log("response : ",response);
+            const response = await axios.post(`${BASE_URL}api/user/author`,data);
+            // console.log("response : ",response);
             sessionStorage.setItem('type' , 'author');
         }
         catch(error)
