@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setAnalysis } from "../utils/userSlice";
+import { BASE_URL } from "../utils/constant";
 
 const useGetUserDetials = (id) => {
         // const userId = sessionStorage.getItem("userId");
@@ -9,7 +10,7 @@ const useGetUserDetials = (id) => {
         const dispatch = useDispatch();
         const getUserInfo = async () =>{
             try{
-                const response = await axios.get(`http://localhost:3000/post/author/${id}`);
+                const response = await axios.get(`${BASE_URL}${id}`);
                 // console.log(response);
                 
                 dispatch(setAnalysis(response?.data));
