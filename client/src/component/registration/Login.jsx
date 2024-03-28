@@ -30,21 +30,12 @@ const user = useSelector((store) => store?.user)
     try {
       const response = await axios.post(`${BASE_URL}api/user/login`, { email: emailIn, password: passwordIn });
       const { sessionId, username, email, _id ,authority} = response.data;
-      // console.log(response?.data);
-      // Store authentication token in session storage
+      
       sessionStorage.setItem('token', sessionId);
       sessionStorage.setItem('username', username);
       sessionStorage.setItem('email', email);
       sessionStorage.setItem('type', authority);
       sessionStorage.setItem('userId', _id);
-      
-      // dispatch(setUserId(_id));
-      // const username = sessionStorage.getItem('username');
-      //           const email = sessionStorage.getItem('email');
-      // dispatch(setUserInfo({username , email , authority , _id}));
-      // Store user info in Redux store
-      // dispatch(setAuth(true));
-     
       navigate("/");
     } catch(error) {
       console.log({ message: error.message });

@@ -10,7 +10,7 @@ const formattedDate = date.toISOString().split('T')[0];
 
 
   return (
-    <div className="py-10">
+    <div className="py-10 w-[350px]  ">
         <div className="h-[400px] w-[350px] rounded-lg">
             <img
                 className="w-full h-full rounded-lg"

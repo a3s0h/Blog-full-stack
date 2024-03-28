@@ -12,11 +12,14 @@ const userSlice = createSlice({
         },
         removeUser : (state , action) => {
             state.userInfo =  null;
+        },
+        setAnalysis: (state, action) => {
+            state.userInfo = { ...state.userInfo, analysis: action.payload }; // Append analysis data to user info
         }
     }
 
 });
 
-export const { setUserInfo , removeUser } = userSlice.actions;
+export const { setUserInfo , removeUser  , setAnalysis } = userSlice.actions;
 
 export default userSlice.reducer;

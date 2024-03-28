@@ -2,6 +2,8 @@
     -> set up rest APIs
         > Posts 
             . fetch all post and by id
+            . fetch posts by author id 
+            . fetch post by categories
         > Login/Register api
             . login and sign up apis
             . authentication of user
@@ -13,6 +15,8 @@
     -> routing to different pages 
     -> pages added : home , abour , contect , sign up and sign in
     -> responsive design on all pages
+    -> User dashboard created 
+
 
 # Redux store 
     -> PostSlice for storing all the posts fetched form the databse 

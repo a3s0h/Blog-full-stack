@@ -12,7 +12,7 @@ const NavLinks = () => {
     const username = useSelector((store) => store?.user?.userInfo?.username);
     // console.log(username);
 
-    const isAdmin = true;
+    const isAdmin = false;
     useEffect( () => {
             const token = sessionStorage.getItem('token');
             if (token) {
