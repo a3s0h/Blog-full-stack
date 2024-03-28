@@ -5,12 +5,12 @@ import { setAnalysis } from "../utils/userSlice";
 
 const useGetUserDetials = (id) => {
         // const userId = sessionStorage.getItem("userId");
-        console.log(id);
+        // console.log(id);
         const dispatch = useDispatch();
         const getUserInfo = async () =>{
             try{
                 const response = await axios.get(`http://localhost:3000/post/author/${id}`);
-                console.log(response);
+                // console.log(response);
                 
                 dispatch(setAnalysis(response?.data));
             }

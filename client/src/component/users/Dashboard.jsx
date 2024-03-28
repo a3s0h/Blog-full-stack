@@ -9,9 +9,10 @@ const Dashboard = () => {
   const user = useSelector((store) => store.user?.userInfo);
 
   const data = useSelector((store) => store.user?.userInfo?.analysis)
-  console.log(data);
+  // console.log(data);
 
-  const recentPosts = data?.post;
+  // if(!data )return;
+  const recentPosts = data?.post || [];
 
   // if(!user)return;
 

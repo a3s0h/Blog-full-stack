@@ -34,7 +34,7 @@ const AuthorForm = () => {
         const data = {userId : userId ,name :  nameIn , bio :  bioIn} ;
         try{
             const response = await axios.post(`${BASE_URL}api/user/author`,data);
-            // console.log("response : ",response);
+            console.log("response : ",response);
             sessionStorage.setItem('type' , 'author');
         }
         catch(error)
