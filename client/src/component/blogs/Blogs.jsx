@@ -47,7 +47,7 @@ const Blogs = () => {
       {
         type !== 'author' &&
         <>
-        <div className="inline-block mt-10">
+        <div id='become-author' className="inline-block mt-10">
                   <h1 className="font-semibold text-6xl">
                       Become an <span className="text-orange-600 font-bold">Author</span>
                   </h1>

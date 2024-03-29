@@ -14,10 +14,12 @@ const cors = require("cors");
 connectDB();
 app.use(cookieParser());
 app.use(cors());
-
+app.use(express.static('uploads'));
+app.use(express.urlencoded({extended : false}));
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+app.use(express.static('uploads'));
 
 // Route handling
 app.use("/", router); 

@@ -4,6 +4,7 @@ import CommentTemplate from "./CommentTemplate"
 import { useDispatch, useSelector } from 'react-redux'
 import useGetPostById from '../../hooks/useGetPostById'
 import { resetSpecificPost } from '../../utils/blogSlice'
+import { BASE_URL } from '../../utils/constant'
 
 const Blog = () => {
     const dispatch = useDispatch();
@@ -32,7 +33,7 @@ const Blog = () => {
         <div className="w-full h-[600px] overflow-hidden">
             <img
                 className="w-full h-auto content-center"
-            src={featuredImage} alt="featured image here" />
+            src={`${BASE_URL}${featuredImage}`}  alt="featured image here" />
         </div>
         <div>
             <span>

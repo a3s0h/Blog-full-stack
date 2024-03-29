@@ -10,7 +10,7 @@ const useGetUserDetials = (id) => {
         const dispatch = useDispatch();
         const getUserInfo = async () =>{
             try{
-                const response = await axios.get(`${BASE_URL}${id}`);
+                const response = await axios.get(`${BASE_URL}post/author/${id}`);
                 // console.log(response);
                 
                 dispatch(setAnalysis(response?.data));

@@ -11,6 +11,7 @@ import Register from './registration/Register';
 import Login from "./registration/Login"
 import Dashboard from './users/Dashboard';
 import DashBoard from './admin/DashBoard';
+import BlogForm from './users/BlogForm';
 
 const Body = () => {
 
@@ -28,6 +29,7 @@ const Body = () => {
             <Route path="/login" element={ <Login/> } />
             <Route path="/dashboard" element={ <Dashboard /> } />
             <Route path="/admin" element = {<DashBoard/>} />
+            <Route path="/blogform"  element={<BlogForm/>} />
         </Routes>
         <Footer/>
         </div>

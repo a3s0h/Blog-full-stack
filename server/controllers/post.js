@@ -59,21 +59,25 @@ const postByAuthorId = async (req, res) => {
 
 const addPost = async (req, res) => {
     try {
-        const { title, content, excert,author, category, featuredImage } = req.body; // Assuming the client sends these fields in the request body
+        const { title, content, excert, author, category } = req.body;
+        const { filename: featuredImage } = req.file; // Get the filename of the uploaded image from req.file
+
         const newPost = new Post({
             title,
             content,
             excert,
-            author: {name : author.name, id: author.id }, // Assuming authorId is provided by the client
+            author: { name: author.name, id: author.id },
             category: { name: category },
-            featuredImage
+            featuredImage // Use the filename as the featuredImage field
         });
+
         const savedPost = await newPost.save();
+        
         res.status(201).json(savedPost);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
-}
+};
 
 
 

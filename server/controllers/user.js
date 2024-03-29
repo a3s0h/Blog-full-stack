@@ -48,7 +48,7 @@ const loginUser = async (req,res) =>{
 
 const userAsAuthor = async (req, res) => {
     const { userId, name, bio } = req.body;
-    console.log(userId);
+    // console.log(userId);
     try {
         // Check if the user exists
         const user = await User.findById(userId);
