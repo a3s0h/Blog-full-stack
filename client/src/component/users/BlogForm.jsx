@@ -115,7 +115,7 @@ const BlogForm = () => {
                 focus:outline-none focus:shadow-outline"
                   onClick={handleBlog}
                 >
-            Send Message
+            Add Blog
           </button>
         </form>
       </div>

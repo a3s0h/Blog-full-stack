@@ -14,10 +14,10 @@ const BlogCard = ({title , excert , featuredImage , createdAt}) => {
 
   return (
     <>
-      <div className="px-4 " data-aos="faded-down">
+      <div className="px-4 w-[300px] h-auto" data-aos="faded-down">
         <div className="mb-10 w-full">
           <div className="mb-8 overflow-hidden rounded">
-            <img src={`${BASE_URL}${featuredImage}`} alt="" className="w-full" />
+            <img src={`${BASE_URL}${featuredImage}`} alt="" className="w-[350px] h-[300px] overflow-hidden" />
           </div>
           <div>
             {createdAt && (
@@ -73,7 +73,7 @@ const FeaturedBlogs = (data) => {
             </div>
           </div>
 
-          <div className="flex flex-col justify-center items-center sm:flex-row flex-wrap">
+          <div className="flex flex-col justify-around sm:items-start items-center sm:flex-row flex-wrap">
             {
               data?.data?.map((post) => (
                 <Link to={`/blog/${post?._id}`} key={post?._id}>
