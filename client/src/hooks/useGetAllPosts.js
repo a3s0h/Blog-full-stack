@@ -13,6 +13,7 @@ const useGetAllPosts = () => {
     const fetchPosts = async () => {
         const response = await axios.get(BASE_URL);
         dispatch(addPosts(response?.data));
+        // console.log("response" , response);
       }
       useEffect(()=>{
         !post && fetchPosts();

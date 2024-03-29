@@ -12,8 +12,12 @@ import Login from "./registration/Login"
 import Dashboard from './users/Dashboard';
 import DashBoard from './admin/DashBoard';
 import BlogForm from './users/BlogForm';
+import useGetAllPosts from '../hooks/useGetAllPosts'
+
 
 const Body = () => {
+
+  useGetAllPosts();
 
   return (
     <BrowserRouter>

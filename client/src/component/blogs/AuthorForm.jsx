@@ -48,9 +48,9 @@ const AuthorForm = () => {
 
 
     return (
-        <div className="py-3">
+        <div className="my-5">
             {/* form section */}
-            <div className="min-h-screen  py-6 flex flex-col justify-center sm:py-12">
+            <div className="min-h-[600px] px-10  flex flex-col justify-center sm:py-12">
                 <div className="relative py-3 sm:max-w-xl sm:mx-auto">
                     <div className="absolute inset-0 bg-gradient-to-r from-orange-300 to-orange-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
                     </div>

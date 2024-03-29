@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import {useSelector} from "react-redux"
 import axios from "axios";
 import {BASE_URL} from "../../utils/constant"
+import { useNavigate } from 'react-router-dom';
 
 const BlogForm = () => {
   const title = useRef(null);
@@ -11,6 +12,8 @@ const BlogForm = () => {
   // const image = useRef(null);
   const category = useRef(null);
   
+  const navigate = useNavigate();
+
   const author = useSelector((store) => store.user?.userInfo);
   // console.log(author);
 
@@ -40,6 +43,14 @@ const BlogForm = () => {
         'Content-Type': 'multipart/form-data', // Set content type to multipart/form-data
       },
     });
+    title.current.value = '';
+    content.current.value = '';
+    excert.current.value = '';
+    category.current.value = '';
+    setImageFile(null);
+
+    // Navigate to the blog page
+    navigate("/blog");
     // console.log(response);
   } catch (error) {
     console.log(error.message);

@@ -11,8 +11,8 @@ const formattedDate = date.toISOString().split('T')[0];
 
 
   return (
-    <div className="py-10 w-[350px]  ">
-        <div className=" relative h-[400px] w-[350px] rounded-lg overflow-hidden">
+    <div className="py-10 w-[450px]  ">
+        <div className=" relative h-[450px] w-[450px] rounded-lg overflow-hidden">
             <img
                 className="w-full h-full rounded-lg"
             src={`${BASE_URL}${featuredImage}`} alt="postImage" />

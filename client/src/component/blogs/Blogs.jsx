@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import BlogTemplate from './BlogTemplate';
 import {Link} from "react-router-dom"
-import useGetAllPosts from '../../hooks/useGetAllPosts';
+// import useGetAllPosts from '../../hooks/useGetAllPosts';
 import { useSelector } from 'react-redux';
 import AOS from "aos"
 import 'aos/dist/aos.css'
@@ -11,7 +11,7 @@ import AuthorForm from './AuthorForm';
 
 const Blogs = () => {
   
-  useGetAllPosts();
+
 
   const type = useSelector((store) => store.user?.userInfo?.type);
 
@@ -32,7 +32,7 @@ const Blogs = () => {
         <h1 className="text-4xl mb-3 font-semibold">Get latest <span className="text-orange-600 font-bold" data-aos="fade-down">Blogs</span></h1>
         <hr className="h-1 w-full bg-orange-500" />
       </div>
-      <div className="flex flex-wrap justify-center flex-col sm:flex-row items-start sm:gap-10 mt-5 px-10" data-aos="fade-up">
+      <div className="flex flex-wrap justify-center flex-col sm:flex-row items-center sm:items-start sm:gap-10 mt-5 px-10" data-aos="fade-up">
         {
           post?.map((post) =>(
             <Link to={`/blog/${post._id}`} key={post._id}>

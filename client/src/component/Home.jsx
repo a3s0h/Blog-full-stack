@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './navbar/Navbar'
 import { HeaderImage } from '../utils/constant'
 import { Link } from 'react-router-dom'
@@ -6,9 +6,30 @@ import FeaturedBlogs from './FeaturedBlogs'
 import AOS from "aos"
 import 'aos/dist/aos.css'
 import manBg from "../../public/manBg.svg"
+import { useSelector } from 'react-redux'
 
 
 const Home = () => {
+
+    // const postData = useSelector((store) => store.blogs?.posts);
+  // console.log(postData);
+  const data = useSelector((store) => store.blogs?.posts);
+
+  const [latestPosts, setLatestPosts] = useState(null);
+
+  useEffect(() => {
+    if (data) {
+      // Sort the posts by createdAt field in descending order
+      const sortedPosts = [...data].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      // Get the latest three posts
+      const latestThreePosts = sortedPosts.slice(0, 3);
+      setLatestPosts(latestThreePosts);
+    }
+    
+  }, []);
+ 
+//   console.log(latestPosts);
+    
 
     useEffect(()=>{
         AOS.init({duration : 2000});
@@ -35,7 +56,12 @@ const Home = () => {
         
     </div>
     <hr className="bg-gray-900 h-[2px] w-[90%] m-auto" />
-    <FeaturedBlogs />
+    
+    {
+        latestPosts && <FeaturedBlogs  data={latestPosts}/>
+
+    }
+    {/* <FeaturedBlogs  data={latestPosts}/> */}
     </div>
   )
 }
